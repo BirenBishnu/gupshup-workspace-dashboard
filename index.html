@@ -41,8 +41,6 @@ header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,0.97);backdrop
 .filter-btn.active{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;box-shadow:0 3px 12px rgba(59,130,246,0.3)}
 .filter-btn:hover:not(.active){background:#334155;color:#cbd5e1}
 .drag-hint{display:flex;align-items:center;gap:6px;font-size:10px;color:#334155;padding:6px 36px;background:rgba(15,23,42,0.5);border-bottom:1px solid rgba(148,163,184,0.04)}
-
-/* CATEGORY SECTIONS */
 main{max-width:1300px;margin:0 auto;padding:24px 36px 60px}
 .category-section{margin-bottom:32px}
 .category-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
@@ -50,15 +48,12 @@ main{max-width:1300px;margin:0 auto;padding:24px 36px 60px}
 .category-line{flex:1;height:1px;background:rgba(148,163,184,0.08)}
 .category-count{font-size:10px;color:#475569;font-weight:600;background:rgba(148,163,184,0.07);padding:2px 8px;border-radius:999px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
-
-/* CARDS */
 .card{background:rgba(30,41,59,0.55);backdrop-filter:blur(8px);border:1px solid rgba(148,163,184,0.1);border-radius:16px;padding:20px;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s,opacity 0.2s;position:relative;overflow:hidden;cursor:grab;user-select:none}
 .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.4);border-color:rgba(148,163,184,0.22)}
 .card.dragging{opacity:0.3;transform:scale(0.96);cursor:grabbing;box-shadow:none!important;border-color:rgba(148,163,184,0.07)!important}
 .card.drag-over{border-color:#3b82f6!important;border-style:dashed!important;background:rgba(59,130,246,0.07)!important;transform:scale(1.02)!important;box-shadow:0 0 0 2px rgba(59,130,246,0.2),0 16px 36px rgba(0,0,0,0.3)!important}
 .drag-handle{position:absolute;top:9px;left:9px;opacity:0;transition:opacity 0.2s;cursor:grab;padding:3px;border-radius:5px}
 .drag-handle:hover{background:rgba(148,163,184,0.1)}
-.drag-handle svg{width:12px;height:12px}
 .card:hover .drag-handle{opacity:1}
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;padding-left:2px}
 .card-icon{border-radius:12px;padding:10px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -84,7 +79,6 @@ main{max-width:1300px;margin:0 auto;padding:24px 36px 60px}
 .card:hover .arrow{transform:translateX(3px)}
 .visit-time{font-size:10px;color:#334155}
 .recent-badge{position:absolute;top:9px;right:9px;background:rgba(16,185,129,0.15);color:#10b981;padding:2px 7px;border-radius:999px;font-size:9px;font-weight:700;letter-spacing:0.3px}
-
 .empty{text-align:center;padding:60px 20px;color:#475569;display:none}
 .empty .emoji{font-size:44px;margin-bottom:12px}
 .empty h3{color:#94a3b8;margin-bottom:6px}
@@ -106,8 +100,8 @@ main{max-width:1300px;margin:0 auto;padding:24px 36px 60px}
       <div id="clock"></div>
       <div id="date"></div>
       <div class="header-stats">
-        <div class="stat"><div class="stat-num" id="total-count">17</div><div class="stat-label">Total</div></div>
-        <div class="stat"><div class="stat-num" id="visible-count">17</div><div class="stat-label">Showing</div></div>
+        <div class="stat"><div class="stat-num" id="total-count">18</div><div class="stat-label">Total</div></div>
+        <div class="stat"><div class="stat-num" id="visible-count">18</div><div class="stat-label">Showing</div></div>
       </div>
     </div>
   </div>
@@ -130,8 +124,8 @@ main{max-width:1300px;margin:0 auto;padding:24px 36px 60px}
 </div>
 
 <div class="drag-hint">
-  <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:#475569;stroke-width:2"><circle cx="9" cy="5" r="1" fill="#475569"/><circle cx="9" cy="12" r="1" fill="#475569"/><circle cx="9" cy="19" r="1" fill="#475569"/><circle cx="15" cy="5" r="1" fill="#475569"/><circle cx="15" cy="12" r="1" fill="#475569"/><circle cx="15" cy="19" r="1" fill="#475569"/></svg>
-  Drag & drop cards to rearrange freely across any category — your layout saves automatically
+  <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none"><circle cx="9" cy="5" r="1" fill="#475569"/><circle cx="9" cy="12" r="1" fill="#475569"/><circle cx="9" cy="19" r="1" fill="#475569"/><circle cx="15" cy="5" r="1" fill="#475569"/><circle cx="15" cy="12" r="1" fill="#475569"/><circle cx="15" cy="19" r="1" fill="#475569"/></svg>
+  Drag & drop cards to rearrange freely — your layout saves automatically
 </div>
 
 <main>
@@ -142,7 +136,7 @@ main{max-width:1300px;margin:0 auto;padding:24px 36px 60px}
     <p>Try a different search term or category</p>
   </div>
   <div class="footer-stats">
-    <div class="footer-stat"><div class="num" style="color:#3b82f6">17</div><div class="lbl">Tools Available</div></div>
+    <div class="footer-stat"><div class="num" style="color:#3b82f6">18</div><div class="lbl">Tools Available</div></div>
     <div class="footer-stat"><div class="num" style="color:#8b5cf6">6</div><div class="lbl">Categories</div></div>
     <div class="footer-stat"><div class="num" style="color:#10b981" id="visit-count">0</div><div class="lbl">Visits Today</div></div>
     <div class="footer-stat"><div class="num" style="color:#f59e0b" id="notes-count">0</div><div class="lbl">Notes Saved</div></div>
@@ -150,41 +144,40 @@ main{max-width:1300px;margin:0 auto;padding:24px 36px 60px}
 </main>
 
 <script>
-// ── CATEGORY CONFIG ────────────────────────────────────────────────────────────
 const CATEGORY_COLORS = {
-  "Analytics":       { color:"#22c55e",  gradient:"linear-gradient(135deg,#22c55e,#16a34a)",  title:"📊 Analytics" },
-  "Finance":         { color:"#a855f7",  gradient:"linear-gradient(135deg,#a855f7,#7c3aed)",  title:"💰 Finance" },
-  "Strategy":        { color:"#f97316",  gradient:"linear-gradient(135deg,#f97316,#ea580c)",  title:"🎯 Strategy" },
-  "Portals & Logins":{ color:"#3b82f6",  gradient:"linear-gradient(135deg,#3b82f6,#2563eb)",  title:"🔐 Portals & Logins" },
-  "Media & Files":   { color:"#14b8a6",  gradient:"linear-gradient(135deg,#14b8a6,#0891b2)",  title:"🗂️ Media & Files" },
-  "Admin":           { color:"#64748b",  gradient:"linear-gradient(135deg,#64748b,#475569)",  title:"⚙️ Admin" },
+  "Analytics":        { color:"#22c55e", gradient:"linear-gradient(135deg,#22c55e,#16a34a)", title:"📊 Analytics" },
+  "Finance":          { color:"#a855f7", gradient:"linear-gradient(135deg,#a855f7,#7c3aed)", title:"💰 Finance" },
+  "Strategy":         { color:"#f97316", gradient:"linear-gradient(135deg,#f97316,#ea580c)", title:"🎯 Strategy" },
+  "Portals & Logins": { color:"#3b82f6", gradient:"linear-gradient(135deg,#3b82f6,#2563eb)", title:"🔐 Portals & Logins" },
+  "Media & Files":    { color:"#14b8a6", gradient:"linear-gradient(135deg,#14b8a6,#0891b2)", title:"🗂️ Media & Files" },
+  "Admin":            { color:"#64748b", gradient:"linear-gradient(135deg,#64748b,#475569)", title:"⚙️ Admin" },
 };
 
-// ── TOOLS DATA ─────────────────────────────────────────────────────────────────
 const TOOLS_DEFAULT = [
   // Analytics
-  { id:"cep",        name:"CEP WhatsApp Searcher",    desc:"Search & analyze WhatsApp messages via CEP platform",       icon:"message-circle", gradient:"linear-gradient(135deg,#22c55e,#16a34a)", url:"http://cep-apps-02.awsfb.gupshup.me:8080/analysisUI/messages.jsp",                       category:"Analytics",        badge:"CEP"      },
-  { id:"smssearch",  name:"SMS Message Searcher",      desc:"Search & trace SMS messages by number or content",         icon:"search",         gradient:"linear-gradient(135deg,#84cc16,#65a30d)", url:"http://analysisui-01.enterprise.gupshup.me:8080/analysisUI/messages.jsp?to=8847882490", category:"Analytics",        badge:"SMS"      },
-  { id:"smsstats",   name:"SMS Stats",                 desc:"Detailed SMS usage statistics and metrics",                icon:"bar-chart",      gradient:"linear-gradient(135deg,#06b6d4,#0891b2)", url:"http://techsupport.enterprise.gupshup.me/vimal/Usage_Stats/",                           category:"Analytics",        badge:"Stats"    },
-  { id:"rcs",        name:"RCS Analytics",             desc:"Rich Communication Services analytics & insights",        icon:"radio",          gradient:"linear-gradient(135deg,#ec4899,#e11d48)", url:"https://rbm.gupshup.io/",                                                               category:"Analytics",        badge:"RCS"      },
-  { id:"wasearch",   name:"WhatsApp Message Searcher", desc:"Internal advanced WhatsApp message search tool",          icon:"message-square", gradient:"linear-gradient(135deg,#10b981,#059669)", url:"http://10.32.162.201/messagesearcher",                                                   category:"Analytics",        badge:"Search"   },
-  { id:"unify",      name:"Unify Enterprise",          desc:"WhatsApp analytics via Unify enterprise dashboard",       icon:"layers",         gradient:"linear-gradient(135deg,#6366f1,#4f46e5)", url:"https://unify.smsgupshup.com/WhatsApp/Analytics/",                                      category:"Analytics",        badge:"Unify"    },
+  { id:"cep",        name:"CEP WhatsApp Searcher",    desc:"Search & analyze WhatsApp messages via CEP platform",      icon:"message-circle", gradient:"linear-gradient(135deg,#22c55e,#16a34a)", url:"http://cep-apps-02.awsfb.gupshup.me:8080/analysisUI/messages.jsp",                       category:"Analytics",        badge:"CEP"     },
+  { id:"smssearch",  name:"SMS Message Searcher",      desc:"Search & trace SMS messages by number or content",        icon:"search",         gradient:"linear-gradient(135deg,#84cc16,#65a30d)", url:"http://analysisui-01.enterprise.gupshup.me:8080/analysisUI/messages.jsp?to=8847882490", category:"Analytics",        badge:"SMS"     },
+  { id:"smsstats",   name:"SMS Stats",                 desc:"Detailed SMS usage statistics and metrics",               icon:"bar-chart",      gradient:"linear-gradient(135deg,#06b6d4,#0891b2)", url:"http://techsupport.enterprise.gupshup.me/vimal/Usage_Stats/",                           category:"Analytics",        badge:"Stats"   },
+  { id:"rcs",        name:"RCS Analytics",             desc:"Rich Communication Services analytics & insights",       icon:"radio",          gradient:"linear-gradient(135deg,#ec4899,#e11d48)", url:"https://rbm.gupshup.io/",                                                               category:"Analytics",        badge:"RCS"     },
+  { id:"wasearch",   name:"WhatsApp Message Searcher", desc:"Internal advanced WhatsApp message search tool",         icon:"message-square", gradient:"linear-gradient(135deg,#10b981,#059669)", url:"http://10.32.162.201/messagesearcher",                                                   category:"Analytics",        badge:"Search"  },
+  { id:"unify",      name:"Unify Enterprise",          desc:"WhatsApp analytics via Unify enterprise dashboard",      icon:"layers",         gradient:"linear-gradient(135deg,#6366f1,#4f46e5)", url:"https://unify.smsgupshup.com/WhatsApp/Analytics/",                                      category:"Analytics",        badge:"Unify"   },
   // Finance
-  { id:"finance",    name:"Finance Dashboard",         desc:"Invoice portal, billing and financial analytics",         icon:"dollar",         gradient:"linear-gradient(135deg,#a855f7,#7c3aed)", url:"https://finance.gupshup.io/InvoicePortal/",                                             category:"Finance",          badge:"Finance"  },
-  { id:"revenue",    name:"Revenue Predictor",         desc:"CPaaS revenue forecasting & intelligent predictions",     icon:"trending-up",    gradient:"linear-gradient(135deg,#c084fc,#9333ea)", url:"https://finance-int.gupshup.io/gmpredictor/cpaas-revenue",                              category:"Finance",          badge:"Predict"  },
-  { id:"metabase",   name:"MetaBase Reports",          desc:"WhatsApp finance dashboard & business reports",           icon:"database",       gradient:"linear-gradient(135deg,#e879f9,#c026d3)", url:"https://sk.gsbiml.in/dashboard/768-finance-dashboard-internal-ist",                     category:"Finance",          badge:"Reports"  },
+  { id:"finance",    name:"Finance Dashboard",         desc:"Invoice portal, billing and financial analytics",        icon:"dollar",         gradient:"linear-gradient(135deg,#a855f7,#7c3aed)", url:"https://finance.gupshup.io/InvoicePortal/",                                             category:"Finance",          badge:"Finance" },
+  { id:"revenue",    name:"Revenue Predictor",         desc:"CPaaS revenue forecasting & intelligent predictions",    icon:"trending-up",    gradient:"linear-gradient(135deg,#c084fc,#9333ea)", url:"https://finance-int.gupshup.io/gmpredictor/cpaas-revenue",                              category:"Finance",          badge:"Predict" },
+  { id:"metabase",   name:"MetaBase Reports",          desc:"WhatsApp finance dashboard & business reports",          icon:"database",       gradient:"linear-gradient(135deg,#e879f9,#c026d3)", url:"https://sk.gsbiml.in/dashboard/768-finance-dashboard-internal-ist",                     category:"Finance",          badge:"Reports" },
   // Strategy
-  { id:"gtm",        name:"GTM Buddy",                 desc:"Go-to-market strategy, planning and execution hub",      icon:"target",         gradient:"linear-gradient(135deg,#f97316,#ea580c)", url:"https://gupshup.gtmbuddy.io/home",                                                      category:"Strategy",         badge:"GTM"      },
+  { id:"gtm",        name:"GTM Buddy",                 desc:"Go-to-market strategy, planning and execution hub",     icon:"target",         gradient:"linear-gradient(135deg,#f97316,#ea580c)", url:"https://gupshup.gtmbuddy.io/home",                                                      category:"Strategy",         badge:"GTM"     },
   // Portals & Logins
-  { id:"salesforce", name:"Salesforce",                desc:"Gupshup Salesforce CRM — leads, accounts & pipelines",   icon:"cloud",          gradient:"linear-gradient(135deg,#3b82f6,#1d4ed8)", url:"https://gupshup8.lightning.force.com/lightning/page/home",                              category:"Portals & Logins", badge:"CRM"      },
-  { id:"smsportal",  name:"SMS Portal",                desc:"Gupshup enterprise SMS portal login & management",       icon:"message-circle", gradient:"linear-gradient(135deg,#0ea5e9,#0284c7)", url:"https://enterprise.smsgupshup.com/login",                                               category:"Portals & Logins", badge:"SMS"      },
-  { id:"docs",       name:"Gupshup Docs Hub",          desc:"Official Gupshup developer documentation & guides",      icon:"book",           gradient:"linear-gradient(135deg,#38bdf8,#0891b2)", url:"https://docs.gupshup.io/",                                                              category:"Portals & Logins", badge:"Docs"     },
-  { id:"gsmedia",    name:"GSMedia Enterprise",        desc:"GSMedia enterprise login for media management",          icon:"image",          gradient:"linear-gradient(135deg,#60a5fa,#3b82f6)", url:"https://gsmedia.smsgupshup.com/login",                                                  category:"Portals & Logins", badge:"Media"    },
-  { id:"console",    name:"Gupshup Console",           desc:"Unified Gupshup developer console & dashboard",          icon:"monitor",        gradient:"linear-gradient(135deg,#818cf8,#6366f1)", url:"https://console.gupshup.io/unified/dashboard",                                          category:"Portals & Logins", badge:"Console"  },
+  { id:"salesforce", name:"Salesforce",                desc:"Gupshup Salesforce CRM — leads, accounts & pipelines",  icon:"cloud",          gradient:"linear-gradient(135deg,#3b82f6,#1d4ed8)", url:"https://gupshup8.lightning.force.com/lightning/page/home",                              category:"Portals & Logins", badge:"CRM"     },
+  { id:"smsportal",  name:"SMS Portal",                desc:"Gupshup enterprise SMS portal login & management",      icon:"message-circle", gradient:"linear-gradient(135deg,#0ea5e9,#0284c7)", url:"https://enterprise.smsgupshup.com/login",                                               category:"Portals & Logins", badge:"SMS"     },
+  { id:"docs",       name:"Gupshup Docs Hub",          desc:"Official Gupshup developer documentation & guides",     icon:"book",           gradient:"linear-gradient(135deg,#38bdf8,#0891b2)", url:"https://docs.gupshup.io/",                                                              category:"Portals & Logins", badge:"Docs"    },
+  { id:"gsmedia",    name:"GSMedia Enterprise",        desc:"GSMedia enterprise login for media management",         icon:"image",          gradient:"linear-gradient(135deg,#60a5fa,#3b82f6)", url:"https://gsmedia.smsgupshup.com/login",                                                  category:"Portals & Logins", badge:"Media"   },
+  { id:"console",    name:"Gupshup Console",           desc:"Unified Gupshup developer console & dashboard",         icon:"monitor",        gradient:"linear-gradient(135deg,#818cf8,#6366f1)", url:"https://console.gupshup.io/unified/dashboard",                                          category:"Portals & Logins", badge:"Console" },
+  { id:"jira",       name:"Jira",                      desc:"Gupshup project tracking, tickets & sprint management", icon:"jira",           gradient:"linear-gradient(135deg,#2684ff,#0052cc)", url:"https://gupshupinc.atlassian.net/jira/for-you",                                         category:"Portals & Logins", badge:"Jira"    },
   // Media & Files
-  { id:"s3media",    name:"Media Files (S3)",          desc:"Gupshup WhatsApp media files over S3 server",            icon:"folder",         gradient:"linear-gradient(135deg,#14b8a6,#0d9488)", url:"http://10.32.162.205:8881/Zaffar/WhatsAppMediaURL",                                      category:"Media & Files",    badge:"S3"       },
+  { id:"s3media",    name:"Media Files (S3)",          desc:"Gupshup WhatsApp media files over S3 server",           icon:"folder",         gradient:"linear-gradient(135deg,#14b8a6,#0d9488)", url:"http://10.32.162.205:8881/Zaffar/WhatsAppMediaURL",                                      category:"Media & Files",    badge:"S3"      },
   // Admin
-  { id:"mmlite",     name:"MMLite Account Manager",   desc:"Check and manage MMLite accounts with WABA ID",          icon:"settings",       gradient:"linear-gradient(135deg,#64748b,#475569)", url:"http://techsupport.awsfb.gupshup.me/GenericUI/",                                        category:"Admin",            badge:"Config"   },
+  { id:"mmlite",     name:"MMLite Account Manager",   desc:"Check and manage MMLite accounts with WABA ID",         icon:"settings",       gradient:"linear-gradient(135deg,#64748b,#475569)", url:"http://techsupport.awsfb.gupshup.me/GenericUI/",                                        category:"Admin",            badge:"Config"  },
 ];
 
 const ICONS = {
@@ -202,32 +195,28 @@ const ICONS = {
   "book":           `<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>`,
   "image":          `<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>`,
   "monitor":        `<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>`,
+  "jira":           `<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8l4 4-4 4"/><path d="M8 12h8"/>`,
   "folder":         `<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>`,
   "settings":       `<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>`,
 };
 
-// ── STATE ──────────────────────────────────────────────────────────────────────
-let notes   = JSON.parse(localStorage.getItem("gs_notes2")  || "{}");
-let recent  = JSON.parse(localStorage.getItem("gs_recent2") || "[]");
-let visits  = JSON.parse(localStorage.getItem("gs_visits2") || "{}");
-let savedOrder = JSON.parse(localStorage.getItem("gs_order2") || "null");
+let notes        = JSON.parse(localStorage.getItem("gs_notes3")  || "{}");
+let recent       = JSON.parse(localStorage.getItem("gs_recent3") || "[]");
+let visits       = JSON.parse(localStorage.getItem("gs_visits3") || "{}");
+let savedOrder   = JSON.parse(localStorage.getItem("gs_order3")  || "null");
 let activeCategory = "All";
+let dragSrcId    = null;
 
 let TOOLS = savedOrder
   ? savedOrder.map(id => TOOLS_DEFAULT.find(t => t.id === id)).filter(Boolean)
   : [...TOOLS_DEFAULT];
 
 // ── DRAG & DROP ────────────────────────────────────────────────────────────────
-let dragSrcId = null;
-
 function onDragStart(e, id) {
   dragSrcId = id;
   e.dataTransfer.effectAllowed = "move";
   e.dataTransfer.setData("text/plain", id);
-  setTimeout(() => {
-    const el = document.querySelector(`[data-id="${id}"]`);
-    if (el) el.classList.add("dragging");
-  }, 0);
+  setTimeout(() => { const el = document.querySelector(`[data-id="${id}"]`); if(el) el.classList.add("dragging"); }, 0);
 }
 function onDragEnd() {
   document.querySelectorAll(".card").forEach(c => c.classList.remove("dragging","drag-over"));
@@ -235,24 +224,23 @@ function onDragEnd() {
 }
 function onDragOver(e, id) {
   e.preventDefault();
-  if (id === dragSrcId) return;
+  if(id === dragSrcId) return;
   document.querySelectorAll(".card").forEach(c => c.classList.remove("drag-over"));
-  const el = document.querySelector(`[data-id="${id}"]`);
-  if (el) el.classList.add("drag-over");
+  const el = document.querySelector(`[data-id="${id}"]`); if(el) el.classList.add("drag-over");
 }
 function onDragLeave(e) { e.currentTarget.classList.remove("drag-over"); }
 function onDrop(e, targetId) {
   e.preventDefault();
-  if (!dragSrcId || dragSrcId === targetId) return;
+  if(!dragSrcId || dragSrcId === targetId) return;
   const si = TOOLS.findIndex(t => t.id === dragSrcId);
   const ti = TOOLS.findIndex(t => t.id === targetId);
-  if (si === -1 || ti === -1) return;
+  if(si === -1 || ti === -1) return;
   const moved = TOOLS.splice(si, 1)[0];
   TOOLS.splice(ti, 0, moved);
   saveOrder(); renderAll();
 }
-function saveOrder() { localStorage.setItem("gs_order2", JSON.stringify(TOOLS.map(t => t.id))); }
-function resetOrder() { TOOLS = [...TOOLS_DEFAULT]; localStorage.removeItem("gs_order2"); renderAll(); }
+function saveOrder() { localStorage.setItem("gs_order3", JSON.stringify(TOOLS.map(t => t.id))); }
+function resetOrder() { TOOLS = [...TOOLS_DEFAULT]; localStorage.removeItem("gs_order3"); renderAll(); }
 
 // ── CLOCK ──────────────────────────────────────────────────────────────────────
 function updateClock() {
@@ -266,89 +254,62 @@ updateClock(); setInterval(updateClock, 1000);
 function trackVisit(id, name, gradient) {
   const now = Date.now();
   recent = [{id,name,gradient,time:now},...recent.filter(r=>r.id!==id)].slice(0,5);
-  localStorage.setItem("gs_recent2", JSON.stringify(recent));
+  localStorage.setItem("gs_recent3", JSON.stringify(recent));
   const today = new Date().toDateString();
-  if (!visits[today]) visits[today] = 0;
-  visits[today]++;
-  localStorage.setItem("gs_visits2", JSON.stringify(visits));
+  if(!visits[today]) visits[today]=0; visits[today]++;
+  localStorage.setItem("gs_visits3", JSON.stringify(visits));
   renderRecent(); updateVisitCount();
 }
 function updateVisitCount() {
   const today = new Date().toDateString();
-  document.getElementById("visit-count").textContent = visits[today] || 0;
+  document.getElementById("visit-count").textContent = visits[today]||0;
 }
 function timeAgo(ts) {
-  const d = Math.floor((Date.now()-ts)/1000);
-  if (d<60) return "just now";
-  if (d<3600) return Math.floor(d/60)+"m ago";
-  if (d<86400) return Math.floor(d/3600)+"h ago";
-  return Math.floor(d/86400)+"d ago";
+  const d=Math.floor((Date.now()-ts)/1000);
+  if(d<60) return "just now"; if(d<3600) return Math.floor(d/60)+"m ago";
+  if(d<86400) return Math.floor(d/3600)+"h ago"; return Math.floor(d/86400)+"d ago";
 }
 
 // ── RECENT ─────────────────────────────────────────────────────────────────────
 function renderRecent() {
   const el = document.getElementById("recent-chips");
-  if (!recent.length) { el.innerHTML = '<span class="no-recent">No recent visits yet — start clicking tools!</span>'; return; }
-  el.innerHTML = recent.map(r => {
-    const tool = TOOLS.find(t => t.id === r.id);
-    const col = r.gradient.match(/#[a-f0-9]{6}/i)?.[0] || "#3b82f6";
+  if(!recent.length){el.innerHTML='<span class="no-recent">No recent visits yet — start clicking tools!</span>';return;}
+  el.innerHTML = recent.map(r=>{
+    const tool=TOOLS.find(t=>t.id===r.id);
+    const col=r.gradient.match(/#[a-f0-9]{6}/i)?.[0]||"#3b82f6";
     return `<a class="recent-chip" href="${tool?.url||'#'}" target="_blank" rel="noopener noreferrer"
       onclick="trackVisit('${r.id}','${r.name.replace(/'/g,"\\'")}','${r.gradient}')">
       <span class="recent-dot" style="background:${col}"></span>${r.name}
-      <span class="recent-time">${timeAgo(r.time)}</span>
-    </a>`;
+      <span class="recent-time">${timeAgo(r.time)}</span></a>`;
   }).join('');
 }
 
 // ── FILTERS ────────────────────────────────────────────────────────────────────
 function renderFilters() {
-  const cats = ["All", ...Object.keys(CATEGORY_COLORS)];
-  document.getElementById("filters").innerHTML = cats.map(c =>
+  const cats = ["All",...Object.keys(CATEGORY_COLORS)];
+  document.getElementById("filters").innerHTML = cats.map(c=>
     `<button class="filter-btn ${c===activeCategory?'active':''}" onclick="setCategory('${c}')">${c}</button>`
   ).join('');
 }
-function setCategory(cat) { activeCategory = cat; renderFilters(); renderAll(); }
+function setCategory(cat){activeCategory=cat;renderFilters();renderAll();}
 
 // ── NOTES ──────────────────────────────────────────────────────────────────────
-function editNote(e, id) {
-  e.stopPropagation();
-  document.getElementById(`nd-${id}`).style.display="none";
-  document.getElementById(`ni-${id}`).style.display="block";
-  document.getElementById(`na-${id}`).style.display="flex";
-  document.getElementById(`ni-${id}`).focus();
-}
-function saveNote(e, id) {
-  e.stopPropagation();
-  notes[id] = document.getElementById(`ni-${id}`).value.trim();
-  localStorage.setItem("gs_notes2", JSON.stringify(notes));
-  cancelNote(e, id); renderAll();
-  document.getElementById("notes-count").textContent = Object.values(notes).filter(n=>n).length;
-}
-function cancelNote(e, id) {
-  e && e.stopPropagation();
-  document.getElementById(`nd-${id}`).style.display="block";
-  document.getElementById(`ni-${id}`).style.display="none";
-  document.getElementById(`na-${id}`).style.display="none";
-}
+function editNote(e,id){e.stopPropagation();document.getElementById(`nd-${id}`).style.display="none";document.getElementById(`ni-${id}`).style.display="block";document.getElementById(`na-${id}`).style.display="flex";document.getElementById(`ni-${id}`).focus();}
+function saveNote(e,id){e.stopPropagation();notes[id]=document.getElementById(`ni-${id}`).value.trim();localStorage.setItem("gs_notes3",JSON.stringify(notes));cancelNote(e,id);renderAll();document.getElementById("notes-count").textContent=Object.values(notes).filter(n=>n).length;}
+function cancelNote(e,id){e&&e.stopPropagation();document.getElementById(`nd-${id}`).style.display="block";document.getElementById(`ni-${id}`).style.display="none";document.getElementById(`na-${id}`).style.display="none";}
 
 // ── CARD HTML ──────────────────────────────────────────────────────────────────
 function cardHTML(t) {
-  const note = notes[t.id] || "";
-  const r = recent.find(x => x.id === t.id);
-  const isRecent = !!r;
-  const safeGrad = t.gradient.replace(/'/g, "\\'");
-  const safeName = t.name.replace(/'/g, "\\'");
+  const note=notes[t.id]||"", r=recent.find(x=>x.id===t.id);
+  const safeGrad=t.gradient.replace(/'/g,"\\'"), safeName=t.name.replace(/'/g,"\\'");
   return `
   <div class="card" data-id="${t.id}" draggable="true"
-    ondragstart="onDragStart(event,'${t.id}')"
-    ondragend="onDragEnd()"
-    ondragover="onDragOver(event,'${t.id}')"
-    ondragleave="onDragLeave(event)"
-    ondrop="onDrop(event,'${t.id}')">
+    ondragstart="onDragStart(event,'${t.id}')" ondragend="onDragEnd()"
+    ondragover="onDragOver(event,'${t.id}')" ondragleave="onDragLeave(event)" ondrop="onDrop(event,'${t.id}')">
     <div class="drag-handle" title="Drag to reorder">
       <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none"><circle cx="9" cy="5" r="1.2" fill="#64748b"/><circle cx="9" cy="12" r="1.2" fill="#64748b"/><circle cx="9" cy="19" r="1.2" fill="#64748b"/><circle cx="15" cy="5" r="1.2" fill="#64748b"/><circle cx="15" cy="12" r="1.2" fill="#64748b"/><circle cx="15" cy="19" r="1.2" fill="#64748b"/></svg>
     </div>
-    ${isRecent ? `<span class="recent-badge">Recent</span>` : ''}
+    ${r?`<span class="recent-badge">Recent</span>`:''}
     <div class="card-top">
       <div class="card-icon" style="background:${t.gradient}"><svg viewBox="0 0 24 24">${ICONS[t.icon]}</svg></div>
       <div class="card-meta"><span class="badge">${t.badge}</span><span class="cat-label">${t.category}</span></div>
@@ -368,38 +329,29 @@ function cardHTML(t) {
          onclick="event.stopPropagation();trackVisit('${t.id}','${safeName}','${safeGrad}')">
         Open Tool <span class="arrow">→</span>
       </a>
-      ${r ? `<span class="visit-time">Last: ${timeAgo(r.time)}</span>` : ''}
+      ${r?`<span class="visit-time">Last: ${timeAgo(r.time)}</span>`:''}
     </div>
   </div>`;
 }
 
-// ── RENDER ALL ─────────────────────────────────────────────────────────────────
+// ── RENDER ─────────────────────────────────────────────────────────────────────
 function renderAll() {
-  const q = document.getElementById("search").value.toLowerCase();
-  const filtered = TOOLS.filter(t =>
-    (activeCategory === "All" || t.category === activeCategory) &&
-    (t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.category.toLowerCase().includes(q))
+  const q=document.getElementById("search").value.toLowerCase();
+  const filtered=TOOLS.filter(t=>
+    (activeCategory==="All"||t.category===activeCategory)&&
+    (t.name.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q)||t.category.toLowerCase().includes(q))
   );
-
-  document.getElementById("visible-count").textContent = filtered.length;
-  const content = document.getElementById("main-content");
-  const empty   = document.getElementById("empty");
-
-  if (!filtered.length) { content.innerHTML = ""; empty.style.display = "block"; return; }
-  empty.style.display = "none";
-
-  // Group by category (preserving TOOLS order within each category)
-  const cats = activeCategory === "All"
-    ? Object.keys(CATEGORY_COLORS)
-    : [activeCategory];
-
-  let html = "";
-  cats.forEach(cat => {
-    const catTools = filtered.filter(t => t.category === cat);
-    if (!catTools.length) return;
-    const cc = CATEGORY_COLORS[cat];
-    html += `
-    <div class="category-section">
+  document.getElementById("visible-count").textContent=filtered.length;
+  const content=document.getElementById("main-content"), empty=document.getElementById("empty");
+  if(!filtered.length){content.innerHTML="";empty.style.display="block";return;}
+  empty.style.display="none";
+  const cats=activeCategory==="All"?Object.keys(CATEGORY_COLORS):[activeCategory];
+  let html="";
+  cats.forEach(cat=>{
+    const catTools=filtered.filter(t=>t.category===cat);
+    if(!catTools.length) return;
+    const cc=CATEGORY_COLORS[cat];
+    html+=`<div class="category-section">
       <div class="category-header">
         <span class="category-title" style="color:${cc.color}">${cc.title}</span>
         <span class="category-count">${catTools.length} tool${catTools.length>1?'s':''}</span>
@@ -408,12 +360,10 @@ function renderAll() {
       <div class="grid">${catTools.map(cardHTML).join('')}</div>
     </div>`;
   });
-
-  content.innerHTML = html;
-  document.getElementById("notes-count").textContent = Object.values(notes).filter(n=>n).length;
+  content.innerHTML=html;
+  document.getElementById("notes-count").textContent=Object.values(notes).filter(n=>n).length;
 }
 
-// ── INIT ───────────────────────────────────────────────────────────────────────
 renderFilters(); renderRecent(); renderAll(); updateVisitCount();
 </script>
 </body>
