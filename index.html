@@ -6,99 +6,92 @@
 <title>Gupshup Workspace</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:linear-gradient(135deg,#0f172a 0%,#1e293b 60%,#0f172a 100%);font-family:'Segoe UI',system-ui,sans-serif;color:#f1f5f9}
-header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(148,163,184,0.1);padding:20px 48px 18px}
-.header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand-icon{background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:14px;padding:10px 12px;font-size:22px}
-.brand h1{font-size:24px;font-weight:800;letter-spacing:-0.5px}
-.brand p{color:#64748b;font-size:12px;margin-top:2px}
-.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+body{min-height:100vh;background:linear-gradient(135deg,#0f172a 0%,#1e293b 60%,#0f172a 100%);font-family:'Segoe UI',system-ui,sans-serif;color:#f1f5f9;font-size:14px}
+header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(148,163,184,0.1);padding:16px 36px 14px}
+.header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-icon{background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:12px;padding:9px 11px;font-size:20px;line-height:1}
+.brand h1{font-size:22px;font-weight:800;letter-spacing:-0.5px}
+.brand p{color:#64748b;font-size:11px;margin-top:2px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
 #clock{font-size:13px;font-weight:600;color:#94a3b8}
-#date{font-size:12px;color:#475569}
-.header-stats{display:flex;gap:20px}
+#date{font-size:11px;color:#475569}
+.header-stats{display:flex;gap:16px;margin-top:4px}
 .stat{text-align:center}
-.stat-num{font-size:22px;font-weight:800;color:#3b82f6}
-.stat-label{font-size:10px;color:#64748b;margin-top:1px}
-
-.recent-section{padding:16px 48px 14px;background:rgba(15,23,42,0.6)}
-.recent-label{font-size:11px;font-weight:700;color:#475569;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
-.recent-chips{display:flex;gap:8px;flex-wrap:wrap}
-.recent-chip{display:flex;align-items:center;gap:7px;padding:5px 12px 5px 8px;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.12);border-radius:999px;text-decoration:none;color:#94a3b8;font-size:12px;font-weight:500;transition:all 0.2s}
+.stat-num{font-size:20px;font-weight:800;color:#3b82f6}
+.stat-label{font-size:10px;color:#64748b}
+.recent-section{padding:12px 36px 10px;background:rgba(15,23,42,0.7);border-bottom:1px solid rgba(148,163,184,0.06)}
+.recent-label{font-size:10px;font-weight:700;color:#475569;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.recent-chips{display:flex;gap:7px;flex-wrap:wrap}
+.recent-chip{display:flex;align-items:center;gap:6px;padding:4px 10px 4px 7px;background:rgba(30,41,59,0.9);border:1px solid rgba(148,163,184,0.12);border-radius:999px;text-decoration:none;color:#94a3b8;font-size:11px;font-weight:500;transition:all 0.2s}
 .recent-chip:hover{border-color:rgba(59,130,246,0.4);color:#60a5fa;background:rgba(59,130,246,0.08)}
-.recent-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.recent-time{font-size:10px;color:#334155;margin-left:4px}
-.no-recent{color:#334155;font-size:12px;font-style:italic}
-
-.controls{padding:16px 48px 18px;background:rgba(15,23,42,0.6);border-bottom:1px solid rgba(148,163,184,0.07)}
-.controls-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.recent-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.recent-time{font-size:10px;color:#334155;margin-left:3px}
+.no-recent{color:#334155;font-size:11px;font-style:italic}
+.controls{padding:12px 36px 14px;background:rgba(15,23,42,0.7);border-bottom:1px solid rgba(148,163,184,0.07)}
+.controls-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .search-wrap{position:relative;flex:1}
-.search-wrap input{width:100%;padding:12px 16px 12px 44px;background:#1e293b;border:1px solid rgba(148,163,184,0.15);border-radius:12px;color:#e2e8f0;font-size:14px;outline:none;transition:border-color 0.2s}
+.search-wrap input{width:100%;padding:10px 14px 10px 40px;background:#1e293b;border:1px solid rgba(148,163,184,0.15);border-radius:10px;color:#e2e8f0;font-size:13px;outline:none;transition:border-color 0.2s}
 .search-wrap input:focus{border-color:#3b82f6}
-.search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:17px;height:17px;stroke:#475569;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.reset-btn{padding:11px 18px;background:rgba(148,163,184,0.08);border:1px solid rgba(148,163,184,0.15);border-radius:12px;color:#64748b;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 0.2s}
+.search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:#475569;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.reset-btn{padding:9px 15px;background:rgba(148,163,184,0.08);border:1px solid rgba(148,163,184,0.15);border-radius:10px;color:#64748b;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 0.2s}
 .reset-btn:hover{background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.3);color:#f87171}
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.filter-btn{padding:6px 16px;border-radius:999px;font-size:12px;font-weight:600;cursor:pointer;border:none;background:rgba(30,41,59,0.8);color:#94a3b8;transition:all 0.2s}
-.filter-btn.active{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;box-shadow:0 4px 15px rgba(59,130,246,0.3)}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filter-btn{padding:5px 14px;border-radius:999px;font-size:11px;font-weight:600;cursor:pointer;border:none;background:rgba(30,41,59,0.8);color:#94a3b8;transition:all 0.2s}
+.filter-btn.active{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;box-shadow:0 3px 12px rgba(59,130,246,0.3)}
 .filter-btn:hover:not(.active){background:#334155;color:#cbd5e1}
+.drag-hint{display:flex;align-items:center;gap:6px;font-size:10px;color:#334155;padding:6px 36px;background:rgba(15,23,42,0.5);border-bottom:1px solid rgba(148,163,184,0.04)}
 
-.drag-hint{display:flex;align-items:center;gap:6px;font-size:11px;color:#334155;padding:8px 48px;background:rgba(15,23,42,0.4);border-bottom:1px solid rgba(148,163,184,0.05)}
-.drag-hint svg{width:13px;height:13px;stroke:#475569;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+/* CATEGORY SECTIONS */
+main{max-width:1300px;margin:0 auto;padding:24px 36px 60px}
+.category-section{margin-bottom:32px}
+.category-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.category-title{font-size:13px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
+.category-line{flex:1;height:1px;background:rgba(148,163,184,0.08)}
+.category-count{font-size:10px;color:#475569;font-weight:600;background:rgba(148,163,184,0.07);padding:2px 8px;border-radius:999px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
 
-main{max-width:1280px;margin:0 auto;padding:32px 48px 60px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
-
-/* DRAG STATES */
-.card{background:rgba(30,41,59,0.55);backdrop-filter:blur(8px);border:1px solid rgba(148,163,184,0.1);border-radius:18px;padding:22px;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s,opacity 0.2s;position:relative;overflow:hidden;cursor:grab;user-select:none}
-.card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(0,0,0,0.4);border-color:rgba(148,163,184,0.25)}
-.card.dragging{opacity:0.35;transform:scale(0.97);cursor:grabbing;box-shadow:none !important;border-color:rgba(148,163,184,0.08) !important}
-.card.drag-over{border-color:#3b82f6 !important;border-style:dashed !important;background:rgba(59,130,246,0.07) !important;transform:scale(1.02) !important;box-shadow:0 0 0 2px rgba(59,130,246,0.25), 0 20px 40px rgba(0,0,0,0.3) !important}
-.card.drop-preview{border-color:rgba(59,130,246,0.4) !important;border-style:dashed !important}
-
-.drag-handle{position:absolute;top:10px;left:10px;opacity:0;transition:opacity 0.2s;cursor:grab;padding:4px;border-radius:6px}
+/* CARDS */
+.card{background:rgba(30,41,59,0.55);backdrop-filter:blur(8px);border:1px solid rgba(148,163,184,0.1);border-radius:16px;padding:20px;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s,opacity 0.2s;position:relative;overflow:hidden;cursor:grab;user-select:none}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.4);border-color:rgba(148,163,184,0.22)}
+.card.dragging{opacity:0.3;transform:scale(0.96);cursor:grabbing;box-shadow:none!important;border-color:rgba(148,163,184,0.07)!important}
+.card.drag-over{border-color:#3b82f6!important;border-style:dashed!important;background:rgba(59,130,246,0.07)!important;transform:scale(1.02)!important;box-shadow:0 0 0 2px rgba(59,130,246,0.2),0 16px 36px rgba(0,0,0,0.3)!important}
+.drag-handle{position:absolute;top:9px;left:9px;opacity:0;transition:opacity 0.2s;cursor:grab;padding:3px;border-radius:5px}
 .drag-handle:hover{background:rgba(148,163,184,0.1)}
-.drag-handle svg{width:14px;height:14px;stroke:#475569;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.drag-handle svg{width:12px;height:12px}
 .card:hover .drag-handle{opacity:1}
-
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;padding-left:4px}
-.card-icon{border-radius:13px;padding:11px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
-.card-icon svg{width:21px;height:21px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.card-meta{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
-.badge{background:rgba(59,130,246,0.15);color:#60a5fa;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.4px}
-.cat-label{color:#475569;font-size:11px;font-weight:500}
-.card h3{font-size:15px;font-weight:700;margin-bottom:7px;color:#f1f5f9;line-height:1.4}
-.card .desc{color:#64748b;font-size:13px;line-height:1.6;flex-grow:1;margin-bottom:12px}
-
-.note-area{margin-bottom:14px}
-.note-display{font-size:12px;color:#94a3b8;background:rgba(148,163,184,0.06);border:1px solid rgba(148,163,184,0.1);border-radius:8px;padding:8px 10px;min-height:34px;cursor:text;line-height:1.5;font-style:italic;transition:border-color 0.2s}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;padding-left:2px}
+.card-icon{border-radius:12px;padding:10px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.card-icon svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.badge{background:rgba(59,130,246,0.15);color:#60a5fa;padding:2px 9px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:0.4px}
+.cat-label{color:#475569;font-size:10px;font-weight:500}
+.card h3{font-size:14px;font-weight:700;margin-bottom:6px;color:#f1f5f9;line-height:1.4}
+.card .desc{color:#64748b;font-size:12px;line-height:1.6;flex-grow:1;margin-bottom:11px}
+.note-area{margin-bottom:12px}
+.note-display{font-size:11px;color:#94a3b8;background:rgba(148,163,184,0.06);border:1px solid rgba(148,163,184,0.1);border-radius:7px;padding:7px 9px;min-height:30px;cursor:text;line-height:1.5;font-style:italic;transition:border-color 0.2s}
 .note-display:hover{border-color:rgba(59,130,246,0.3)}
-.note-display.empty{color:#334155}
-.note-input{display:none;width:100%;background:rgba(15,23,42,0.8);border:1px solid #3b82f6;border-radius:8px;padding:8px 10px;color:#e2e8f0;font-size:12px;outline:none;resize:none;font-family:inherit;line-height:1.5}
-.note-actions{display:none;gap:6px;margin-top:6px}
-.note-save,.note-cancel{padding:4px 12px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;border:none;transition:all 0.2s}
-.note-save{background:#3b82f6;color:#fff}
-.note-save:hover{background:#2563eb}
+.note-display.empty{color:#2d3f55}
+.note-input{display:none;width:100%;background:rgba(15,23,42,0.8);border:1px solid #3b82f6;border-radius:7px;padding:7px 9px;color:#e2e8f0;font-size:11px;outline:none;resize:none;font-family:inherit;line-height:1.5}
+.note-actions{display:none;gap:5px;margin-top:5px}
+.note-save,.note-cancel{padding:3px 10px;border-radius:5px;font-size:10px;font-weight:600;cursor:pointer;border:none;transition:all 0.2s}
+.note-save{background:#3b82f6;color:#fff}.note-save:hover{background:#2563eb}
 .note-cancel{background:rgba(148,163,184,0.1);color:#94a3b8}
-
 .card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
-.open-btn{display:flex;align-items:center;gap:6px;color:#3b82f6;font-size:13px;font-weight:600;text-decoration:none;transition:color 0.2s;cursor:pointer}
+.open-btn{display:flex;align-items:center;gap:5px;color:#3b82f6;font-size:12px;font-weight:600;text-decoration:none;transition:color 0.2s}
 .card:hover .open-btn{color:#60a5fa}
 .arrow{transition:transform 0.2s;display:inline-block}
-.card:hover .arrow{transform:translateX(4px)}
+.card:hover .arrow{transform:translateX(3px)}
 .visit-time{font-size:10px;color:#334155}
-.recent-badge{position:absolute;top:10px;right:10px;background:rgba(16,185,129,0.15);color:#10b981;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:0.3px}
+.recent-badge{position:absolute;top:9px;right:9px;background:rgba(16,185,129,0.15);color:#10b981;padding:2px 7px;border-radius:999px;font-size:9px;font-weight:700;letter-spacing:0.3px}
 
-.empty{text-align:center;padding:80px 20px;color:#475569;display:none}
-.empty .emoji{font-size:52px;margin-bottom:16px}
-.empty h3{color:#94a3b8;margin-bottom:8px}
-
-.footer-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
-.footer-stat{background:rgba(30,41,59,0.5);border:1px solid rgba(148,163,184,0.08);border-radius:14px;padding:20px;text-align:center}
-.footer-stat .num{font-size:26px;font-weight:800;margin-bottom:4px}
-.footer-stat .lbl{color:#64748b;font-size:12px}
-
-@media(max-width:640px){header,main,.recent-section,.controls,.drag-hint{padding-left:20px;padding-right:20px}.header-top{flex-direction:column;align-items:flex-start;gap:12px}.footer-stats{grid-template-columns:1fr}}
+.empty{text-align:center;padding:60px 20px;color:#475569;display:none}
+.empty .emoji{font-size:44px;margin-bottom:12px}
+.empty h3{color:#94a3b8;margin-bottom:6px}
+.footer-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.footer-stat{background:rgba(30,41,59,0.5);border:1px solid rgba(148,163,184,0.08);border-radius:12px;padding:18px;text-align:center}
+.footer-stat .num{font-size:24px;font-weight:800;margin-bottom:3px}
+.footer-stat .lbl{color:#64748b;font-size:11px}
 </style>
 </head>
 <body>
@@ -113,8 +106,8 @@ main{max-width:1280px;margin:0 auto;padding:32px 48px 60px}
       <div id="clock"></div>
       <div id="date"></div>
       <div class="header-stats">
-        <div class="stat"><div class="stat-num" id="total-count">10</div><div class="stat-label">Total</div></div>
-        <div class="stat"><div class="stat-num" id="visible-count">10</div><div class="stat-label">Showing</div></div>
+        <div class="stat"><div class="stat-num" id="total-count">17</div><div class="stat-label">Total</div></div>
+        <div class="stat"><div class="stat-num" id="visible-count">17</div><div class="stat-label">Showing</div></div>
       </div>
     </div>
   </div>
@@ -129,67 +122,97 @@ main{max-width:1280px;margin:0 auto;padding:32px 48px 60px}
   <div class="controls-row">
     <div class="search-wrap">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="search" placeholder="Search tools by name, category or description..." oninput="renderGrid()"/>
+      <input type="text" id="search" placeholder="Search tools by name, category or description..." oninput="renderAll()"/>
     </div>
-    <button class="reset-btn" onclick="resetOrder()" title="Reset card order to default">↺ Reset Order</button>
+    <button class="reset-btn" onclick="resetOrder()">↺ Reset Order</button>
   </div>
   <div class="filters" id="filters"></div>
 </div>
 
 <div class="drag-hint">
-  <svg viewBox="0 0 24 24"><circle cx="9" cy="5" r="1" fill="#475569"/><circle cx="9" cy="12" r="1" fill="#475569"/><circle cx="9" cy="19" r="1" fill="#475569"/><circle cx="15" cy="5" r="1" fill="#475569"/><circle cx="15" cy="12" r="1" fill="#475569"/><circle cx="15" cy="19" r="1" fill="#475569"/></svg>
-  Drag & drop cards to rearrange — your layout is saved automatically
+  <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:#475569;stroke-width:2"><circle cx="9" cy="5" r="1" fill="#475569"/><circle cx="9" cy="12" r="1" fill="#475569"/><circle cx="9" cy="19" r="1" fill="#475569"/><circle cx="15" cy="5" r="1" fill="#475569"/><circle cx="15" cy="12" r="1" fill="#475569"/><circle cx="15" cy="19" r="1" fill="#475569"/></svg>
+  Drag & drop cards to rearrange freely across any category — your layout saves automatically
 </div>
 
 <main>
-  <div class="grid" id="grid"></div>
+  <div id="main-content"></div>
   <div class="empty" id="empty">
     <div class="emoji">🔍</div>
     <h3>No tools found</h3>
     <p>Try a different search term or category</p>
   </div>
   <div class="footer-stats">
-    <div class="footer-stat"><div class="num" style="color:#3b82f6">10</div><div class="lbl">Tools Available</div></div>
-    <div class="footer-stat"><div class="num" style="color:#8b5cf6">4</div><div class="lbl">Categories</div></div>
+    <div class="footer-stat"><div class="num" style="color:#3b82f6">17</div><div class="lbl">Tools Available</div></div>
+    <div class="footer-stat"><div class="num" style="color:#8b5cf6">6</div><div class="lbl">Categories</div></div>
     <div class="footer-stat"><div class="num" style="color:#10b981" id="visit-count">0</div><div class="lbl">Visits Today</div></div>
+    <div class="footer-stat"><div class="num" style="color:#f59e0b" id="notes-count">0</div><div class="lbl">Notes Saved</div></div>
   </div>
 </main>
 
 <script>
+// ── CATEGORY CONFIG ────────────────────────────────────────────────────────────
+const CATEGORY_COLORS = {
+  "Analytics":       { color:"#22c55e",  gradient:"linear-gradient(135deg,#22c55e,#16a34a)",  title:"📊 Analytics" },
+  "Finance":         { color:"#a855f7",  gradient:"linear-gradient(135deg,#a855f7,#7c3aed)",  title:"💰 Finance" },
+  "Strategy":        { color:"#f97316",  gradient:"linear-gradient(135deg,#f97316,#ea580c)",  title:"🎯 Strategy" },
+  "Portals & Logins":{ color:"#3b82f6",  gradient:"linear-gradient(135deg,#3b82f6,#2563eb)",  title:"🔐 Portals & Logins" },
+  "Media & Files":   { color:"#14b8a6",  gradient:"linear-gradient(135deg,#14b8a6,#0891b2)",  title:"🗂️ Media & Files" },
+  "Admin":           { color:"#64748b",  gradient:"linear-gradient(135deg,#64748b,#475569)",  title:"⚙️ Admin" },
+};
+
+// ── TOOLS DATA ─────────────────────────────────────────────────────────────────
 const TOOLS_DEFAULT = [
-  { id:"cep",       name:"CEP WhatsApp Searcher",     desc:"Search and analyze WhatsApp messages via CEP platform",       icon:"message-circle", gradient:"linear-gradient(135deg,#22c55e,#16a34a)", url:"http://cep-apps-02.awsfb.gupshup.me:8080/analysisUI/messages.jsp",                        category:"Analytics", badge:"CEP"     },
-  { id:"smssearch", name:"SMS Message Searcher",       desc:"Search and trace SMS messages by number or content",         icon:"search",         gradient:"linear-gradient(135deg,#f59e0b,#d97706)", url:"http://analysisui-01.enterprise.gupshup.me:8080/analysisUI/messages.jsp?to=7609062490",  category:"Analytics", badge:"SMS"     },
-  { id:"sms",       name:"SMS Stats",                  desc:"Get detailed SMS usage statistics and metrics",              icon:"bar-chart",      gradient:"linear-gradient(135deg,#3b82f6,#0891b2)", url:"http://techsupport.enterprise.gupshup.me/vimal/Usage_Stats/",                            category:"Analytics", badge:"Stats"   },
-  { id:"finance",   name:"Finance Dashboard",          desc:"Invoice portal, billing and financial analytics",            icon:"dollar",         gradient:"linear-gradient(135deg,#a855f7,#7c3aed)", url:"https://finance.gupshup.io/InvoicePortal/",                                              category:"Finance",   badge:"Finance" },
-  { id:"gtm",       name:"GTM Buddy",                  desc:"Go-to-market strategy, planning and execution hub",         icon:"target",         gradient:"linear-gradient(135deg,#f97316,#ea580c)", url:"https://gupshup.gtmbuddy.io/home",                                                       category:"Strategy",  badge:"GTM"     },
-  { id:"rcs",       name:"RCS Analytics",              desc:"Rich Communication Services analytics & insights",          icon:"radio",          gradient:"linear-gradient(135deg,#ec4899,#e11d48)", url:"https://rbm.gupshup.io/",                                                                category:"Analytics", badge:"RCS"     },
-  { id:"wasearch",  name:"WhatsApp Message Searcher",  desc:"Internal advanced WhatsApp message search tool",            icon:"message-square", gradient:"linear-gradient(135deg,#14b8a6,#0891b2)", url:"http://10.32.162.201/messagesearcher",                                                    category:"Analytics", badge:"Search"  },
-  { id:"revenue",   name:"Revenue Predictor",          desc:"CPaaS revenue forecasting & intelligent predictions",       icon:"trending-up",    gradient:"linear-gradient(135deg,#6366f1,#3b82f6)", url:"https://finance-int.gupshup.io/gmpredictor/cpaas-revenue",                               category:"Finance",   badge:"Predict" },
-  { id:"metabase",  name:"MetaBase Reports",           desc:"WhatsApp finance dashboard & business reports",             icon:"database",       gradient:"linear-gradient(135deg,#ef4444,#dc2626)", url:"https://sk.gsbiml.in/dashboard/768-finance-dashboard-internal-ist",                      category:"Finance",   badge:"Reports" },
-  { id:"mmlite",    name:"MMLite Account Manager",     desc:"Check and manage MMLite accounts with WABA ID",             icon:"settings",       gradient:"linear-gradient(135deg,#64748b,#475569)", url:"http://techsupport.awsfb.gupshup.me/GenericUI/",                                         category:"Admin",     badge:"Config"  },
+  // Analytics
+  { id:"cep",        name:"CEP WhatsApp Searcher",    desc:"Search & analyze WhatsApp messages via CEP platform",       icon:"message-circle", gradient:"linear-gradient(135deg,#22c55e,#16a34a)", url:"http://cep-apps-02.awsfb.gupshup.me:8080/analysisUI/messages.jsp",                       category:"Analytics",        badge:"CEP"      },
+  { id:"smssearch",  name:"SMS Message Searcher",      desc:"Search & trace SMS messages by number or content",         icon:"search",         gradient:"linear-gradient(135deg,#84cc16,#65a30d)", url:"http://analysisui-01.enterprise.gupshup.me:8080/analysisUI/messages.jsp?to=8847882490", category:"Analytics",        badge:"SMS"      },
+  { id:"smsstats",   name:"SMS Stats",                 desc:"Detailed SMS usage statistics and metrics",                icon:"bar-chart",      gradient:"linear-gradient(135deg,#06b6d4,#0891b2)", url:"http://techsupport.enterprise.gupshup.me/vimal/Usage_Stats/",                           category:"Analytics",        badge:"Stats"    },
+  { id:"rcs",        name:"RCS Analytics",             desc:"Rich Communication Services analytics & insights",        icon:"radio",          gradient:"linear-gradient(135deg,#ec4899,#e11d48)", url:"https://rbm.gupshup.io/",                                                               category:"Analytics",        badge:"RCS"      },
+  { id:"wasearch",   name:"WhatsApp Message Searcher", desc:"Internal advanced WhatsApp message search tool",          icon:"message-square", gradient:"linear-gradient(135deg,#10b981,#059669)", url:"http://10.32.162.201/messagesearcher",                                                   category:"Analytics",        badge:"Search"   },
+  { id:"unify",      name:"Unify Enterprise",          desc:"WhatsApp analytics via Unify enterprise dashboard",       icon:"layers",         gradient:"linear-gradient(135deg,#6366f1,#4f46e5)", url:"https://unify.smsgupshup.com/WhatsApp/Analytics/",                                      category:"Analytics",        badge:"Unify"    },
+  // Finance
+  { id:"finance",    name:"Finance Dashboard",         desc:"Invoice portal, billing and financial analytics",         icon:"dollar",         gradient:"linear-gradient(135deg,#a855f7,#7c3aed)", url:"https://finance.gupshup.io/InvoicePortal/",                                             category:"Finance",          badge:"Finance"  },
+  { id:"revenue",    name:"Revenue Predictor",         desc:"CPaaS revenue forecasting & intelligent predictions",     icon:"trending-up",    gradient:"linear-gradient(135deg,#c084fc,#9333ea)", url:"https://finance-int.gupshup.io/gmpredictor/cpaas-revenue",                              category:"Finance",          badge:"Predict"  },
+  { id:"metabase",   name:"MetaBase Reports",          desc:"WhatsApp finance dashboard & business reports",           icon:"database",       gradient:"linear-gradient(135deg,#e879f9,#c026d3)", url:"https://sk.gsbiml.in/dashboard/768-finance-dashboard-internal-ist",                     category:"Finance",          badge:"Reports"  },
+  // Strategy
+  { id:"gtm",        name:"GTM Buddy",                 desc:"Go-to-market strategy, planning and execution hub",      icon:"target",         gradient:"linear-gradient(135deg,#f97316,#ea580c)", url:"https://gupshup.gtmbuddy.io/home",                                                      category:"Strategy",         badge:"GTM"      },
+  // Portals & Logins
+  { id:"salesforce", name:"Salesforce",                desc:"Gupshup Salesforce CRM — leads, accounts & pipelines",   icon:"cloud",          gradient:"linear-gradient(135deg,#3b82f6,#1d4ed8)", url:"https://gupshup8.lightning.force.com/lightning/page/home",                              category:"Portals & Logins", badge:"CRM"      },
+  { id:"smsportal",  name:"SMS Portal",                desc:"Gupshup enterprise SMS portal login & management",       icon:"message-circle", gradient:"linear-gradient(135deg,#0ea5e9,#0284c7)", url:"https://enterprise.smsgupshup.com/login",                                               category:"Portals & Logins", badge:"SMS"      },
+  { id:"docs",       name:"Gupshup Docs Hub",          desc:"Official Gupshup developer documentation & guides",      icon:"book",           gradient:"linear-gradient(135deg,#38bdf8,#0891b2)", url:"https://docs.gupshup.io/",                                                              category:"Portals & Logins", badge:"Docs"     },
+  { id:"gsmedia",    name:"GSMedia Enterprise",        desc:"GSMedia enterprise login for media management",          icon:"image",          gradient:"linear-gradient(135deg,#60a5fa,#3b82f6)", url:"https://gsmedia.smsgupshup.com/login",                                                  category:"Portals & Logins", badge:"Media"    },
+  { id:"console",    name:"Gupshup Console",           desc:"Unified Gupshup developer console & dashboard",          icon:"monitor",        gradient:"linear-gradient(135deg,#818cf8,#6366f1)", url:"https://console.gupshup.io/unified/dashboard",                                          category:"Portals & Logins", badge:"Console"  },
+  // Media & Files
+  { id:"s3media",    name:"Media Files (S3)",          desc:"Gupshup WhatsApp media files over S3 server",            icon:"folder",         gradient:"linear-gradient(135deg,#14b8a6,#0d9488)", url:"http://10.32.162.205:8881/Zaffar/WhatsAppMediaURL",                                      category:"Media & Files",    badge:"S3"       },
+  // Admin
+  { id:"mmlite",     name:"MMLite Account Manager",   desc:"Check and manage MMLite accounts with WABA ID",          icon:"settings",       gradient:"linear-gradient(135deg,#64748b,#475569)", url:"http://techsupport.awsfb.gupshup.me/GenericUI/",                                        category:"Admin",            badge:"Config"   },
 ];
 
 const ICONS = {
-  "message-circle":`<circle cx="12" cy="12" r="10"/><path d="M8 12h.01M12 12h.01M16 12h.01M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>`,
-  "search":        `<circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>`,
-  "bar-chart":     `<line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>`,
-  "dollar":        `<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>`,
-  "target":        `<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>`,
-  "radio":         `<circle cx="12" cy="12" r="2"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14M19.07 4.93a10 10 0 0 1 0 14.14M7.76 7.76a6 6 0 0 0 0 8.49M16.24 7.76a6 6 0 0 1 0 8.49"/>`,
-  "message-square":`<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>`,
-  "trending-up":   `<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>`,
-  "database":      `<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>`,
-  "settings":      `<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>`
+  "message-circle": `<circle cx="12" cy="12" r="10"/><path d="M8 12h.01M12 12h.01M16 12h.01M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>`,
+  "search":         `<circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>`,
+  "bar-chart":      `<line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>`,
+  "radio":          `<circle cx="12" cy="12" r="2"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14M19.07 4.93a10 10 0 0 1 0 14.14M7.76 7.76a6 6 0 0 0 0 8.49M16.24 7.76a6 6 0 0 1 0 8.49"/>`,
+  "message-square": `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>`,
+  "layers":         `<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>`,
+  "dollar":         `<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>`,
+  "trending-up":    `<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>`,
+  "database":       `<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>`,
+  "target":         `<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>`,
+  "cloud":          `<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>`,
+  "book":           `<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>`,
+  "image":          `<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>`,
+  "monitor":        `<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>`,
+  "folder":         `<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>`,
+  "settings":       `<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>`,
 };
 
 // ── STATE ──────────────────────────────────────────────────────────────────────
-let notes        = JSON.parse(localStorage.getItem("gs_notes")   || "{}");
-let recent       = JSON.parse(localStorage.getItem("gs_recent")  || "[]");
-let visits       = JSON.parse(localStorage.getItem("gs_visits")  || "{}");
-let savedOrder   = JSON.parse(localStorage.getItem("gs_order")   || "null");
+let notes   = JSON.parse(localStorage.getItem("gs_notes2")  || "{}");
+let recent  = JSON.parse(localStorage.getItem("gs_recent2") || "[]");
+let visits  = JSON.parse(localStorage.getItem("gs_visits2") || "{}");
+let savedOrder = JSON.parse(localStorage.getItem("gs_order2") || "null");
 let activeCategory = "All";
 
-// Apply saved order
 let TOOLS = savedOrder
   ? savedOrder.map(id => TOOLS_DEFAULT.find(t => t.id === id)).filter(Boolean)
   : [...TOOLS_DEFAULT];
@@ -203,54 +226,36 @@ function onDragStart(e, id) {
   e.dataTransfer.setData("text/plain", id);
   setTimeout(() => {
     const el = document.querySelector(`[data-id="${id}"]`);
-    if(el) el.classList.add("dragging");
+    if (el) el.classList.add("dragging");
   }, 0);
 }
-
-function onDragEnd(e) {
-  document.querySelectorAll(".card").forEach(c => {
-    c.classList.remove("dragging","drag-over");
-  });
+function onDragEnd() {
+  document.querySelectorAll(".card").forEach(c => c.classList.remove("dragging","drag-over"));
   dragSrcId = null;
 }
-
 function onDragOver(e, id) {
   e.preventDefault();
-  e.dataTransfer.dropEffect = "move";
-  if(id === dragSrcId) return;
+  if (id === dragSrcId) return;
   document.querySelectorAll(".card").forEach(c => c.classList.remove("drag-over"));
   const el = document.querySelector(`[data-id="${id}"]`);
-  if(el) el.classList.add("drag-over");
+  if (el) el.classList.add("drag-over");
 }
-
-function onDragLeave(e) {
-  e.currentTarget.classList.remove("drag-over");
-}
-
+function onDragLeave(e) { e.currentTarget.classList.remove("drag-over"); }
 function onDrop(e, targetId) {
   e.preventDefault();
-  if(!dragSrcId || dragSrcId === targetId) return;
-  const srcIdx = TOOLS.findIndex(t => t.id === dragSrcId);
-  const tgtIdx = TOOLS.findIndex(t => t.id === targetId);
-  if(srcIdx === -1 || tgtIdx === -1) return;
-  const moved = TOOLS.splice(srcIdx, 1)[0];
-  TOOLS.splice(tgtIdx, 0, moved);
-  saveOrder();
-  renderGrid();
+  if (!dragSrcId || dragSrcId === targetId) return;
+  const si = TOOLS.findIndex(t => t.id === dragSrcId);
+  const ti = TOOLS.findIndex(t => t.id === targetId);
+  if (si === -1 || ti === -1) return;
+  const moved = TOOLS.splice(si, 1)[0];
+  TOOLS.splice(ti, 0, moved);
+  saveOrder(); renderAll();
 }
-
-function saveOrder() {
-  localStorage.setItem("gs_order", JSON.stringify(TOOLS.map(t => t.id)));
-}
-
-function resetOrder() {
-  TOOLS = [...TOOLS_DEFAULT];
-  localStorage.removeItem("gs_order");
-  renderGrid();
-}
+function saveOrder() { localStorage.setItem("gs_order2", JSON.stringify(TOOLS.map(t => t.id))); }
+function resetOrder() { TOOLS = [...TOOLS_DEFAULT]; localStorage.removeItem("gs_order2"); renderAll(); }
 
 // ── CLOCK ──────────────────────────────────────────────────────────────────────
-function updateClock(){
+function updateClock() {
   const n = new Date();
   document.getElementById("clock").textContent = n.toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
   document.getElementById("date").textContent  = n.toLocaleDateString("en-IN",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
@@ -258,37 +263,35 @@ function updateClock(){
 updateClock(); setInterval(updateClock, 1000);
 
 // ── VISITS ─────────────────────────────────────────────────────────────────────
-function trackVisit(id, name, gradient){
+function trackVisit(id, name, gradient) {
   const now = Date.now();
   recent = [{id,name,gradient,time:now},...recent.filter(r=>r.id!==id)].slice(0,5);
-  localStorage.setItem("gs_recent", JSON.stringify(recent));
+  localStorage.setItem("gs_recent2", JSON.stringify(recent));
   const today = new Date().toDateString();
-  if(!visits[today]) visits[today]=0;
+  if (!visits[today]) visits[today] = 0;
   visits[today]++;
-  localStorage.setItem("gs_visits", JSON.stringify(visits));
+  localStorage.setItem("gs_visits2", JSON.stringify(visits));
   renderRecent(); updateVisitCount();
 }
-
-function updateVisitCount(){
+function updateVisitCount() {
   const today = new Date().toDateString();
-  document.getElementById("visit-count").textContent = visits[today]||0;
+  document.getElementById("visit-count").textContent = visits[today] || 0;
 }
-
-function timeAgo(ts){
-  const d=Math.floor((Date.now()-ts)/1000);
-  if(d<60) return "just now";
-  if(d<3600) return Math.floor(d/60)+"m ago";
-  if(d<86400) return Math.floor(d/3600)+"h ago";
+function timeAgo(ts) {
+  const d = Math.floor((Date.now()-ts)/1000);
+  if (d<60) return "just now";
+  if (d<3600) return Math.floor(d/60)+"m ago";
+  if (d<86400) return Math.floor(d/3600)+"h ago";
   return Math.floor(d/86400)+"d ago";
 }
 
 // ── RECENT ─────────────────────────────────────────────────────────────────────
-function renderRecent(){
-  const el=document.getElementById("recent-chips");
-  if(!recent.length){el.innerHTML='<span class="no-recent">No recent visits yet — start clicking tools!</span>';return;}
-  el.innerHTML=recent.map(r=>{
-    const tool=TOOLS.find(t=>t.id===r.id);
-    const col=r.gradient.match(/#[a-f0-9]{6}/i)?.[0]||"#3b82f6";
+function renderRecent() {
+  const el = document.getElementById("recent-chips");
+  if (!recent.length) { el.innerHTML = '<span class="no-recent">No recent visits yet — start clicking tools!</span>'; return; }
+  el.innerHTML = recent.map(r => {
+    const tool = TOOLS.find(t => t.id === r.id);
+    const col = r.gradient.match(/#[a-f0-9]{6}/i)?.[0] || "#3b82f6";
     return `<a class="recent-chip" href="${tool?.url||'#'}" target="_blank" rel="noopener noreferrer"
       onclick="trackVisit('${r.id}','${r.name.replace(/'/g,"\\'")}','${r.gradient}')">
       <span class="recent-dot" style="background:${col}"></span>${r.name}
@@ -298,101 +301,120 @@ function renderRecent(){
 }
 
 // ── FILTERS ────────────────────────────────────────────────────────────────────
-function renderFilters(){
-  const cats=["All",...new Set(TOOLS_DEFAULT.map(t=>t.category))];
-  document.getElementById("filters").innerHTML=cats.map(c=>
+function renderFilters() {
+  const cats = ["All", ...Object.keys(CATEGORY_COLORS)];
+  document.getElementById("filters").innerHTML = cats.map(c =>
     `<button class="filter-btn ${c===activeCategory?'active':''}" onclick="setCategory('${c}')">${c}</button>`
   ).join('');
 }
-function setCategory(cat){activeCategory=cat;renderFilters();renderGrid();}
+function setCategory(cat) { activeCategory = cat; renderFilters(); renderAll(); }
 
 // ── NOTES ──────────────────────────────────────────────────────────────────────
-function editNote(e,id){
+function editNote(e, id) {
   e.stopPropagation();
   document.getElementById(`nd-${id}`).style.display="none";
   document.getElementById(`ni-${id}`).style.display="block";
   document.getElementById(`na-${id}`).style.display="flex";
   document.getElementById(`ni-${id}`).focus();
 }
-function saveNote(e,id){
+function saveNote(e, id) {
   e.stopPropagation();
-  notes[id]=document.getElementById(`ni-${id}`).value.trim();
-  localStorage.setItem("gs_notes",JSON.stringify(notes));
-  cancelNote(e,id); renderGrid();
+  notes[id] = document.getElementById(`ni-${id}`).value.trim();
+  localStorage.setItem("gs_notes2", JSON.stringify(notes));
+  cancelNote(e, id); renderAll();
+  document.getElementById("notes-count").textContent = Object.values(notes).filter(n=>n).length;
 }
-function cancelNote(e,id){
-  e&&e.stopPropagation();
+function cancelNote(e, id) {
+  e && e.stopPropagation();
   document.getElementById(`nd-${id}`).style.display="block";
   document.getElementById(`ni-${id}`).style.display="none";
   document.getElementById(`na-${id}`).style.display="none";
 }
 
-// ── GRID ───────────────────────────────────────────────────────────────────────
-function renderGrid(){
-  const q=document.getElementById("search").value.toLowerCase();
-  const filtered=TOOLS.filter(t=>
-    (activeCategory==="All"||t.category===activeCategory)&&
-    (t.name.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q)||t.category.toLowerCase().includes(q))
+// ── CARD HTML ──────────────────────────────────────────────────────────────────
+function cardHTML(t) {
+  const note = notes[t.id] || "";
+  const r = recent.find(x => x.id === t.id);
+  const isRecent = !!r;
+  const safeGrad = t.gradient.replace(/'/g, "\\'");
+  const safeName = t.name.replace(/'/g, "\\'");
+  return `
+  <div class="card" data-id="${t.id}" draggable="true"
+    ondragstart="onDragStart(event,'${t.id}')"
+    ondragend="onDragEnd()"
+    ondragover="onDragOver(event,'${t.id}')"
+    ondragleave="onDragLeave(event)"
+    ondrop="onDrop(event,'${t.id}')">
+    <div class="drag-handle" title="Drag to reorder">
+      <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none"><circle cx="9" cy="5" r="1.2" fill="#64748b"/><circle cx="9" cy="12" r="1.2" fill="#64748b"/><circle cx="9" cy="19" r="1.2" fill="#64748b"/><circle cx="15" cy="5" r="1.2" fill="#64748b"/><circle cx="15" cy="12" r="1.2" fill="#64748b"/><circle cx="15" cy="19" r="1.2" fill="#64748b"/></svg>
+    </div>
+    ${isRecent ? `<span class="recent-badge">Recent</span>` : ''}
+    <div class="card-top">
+      <div class="card-icon" style="background:${t.gradient}"><svg viewBox="0 0 24 24">${ICONS[t.icon]}</svg></div>
+      <div class="card-meta"><span class="badge">${t.badge}</span><span class="cat-label">${t.category}</span></div>
+    </div>
+    <h3>${t.name}</h3>
+    <p class="desc">${t.desc}</p>
+    <div class="note-area">
+      <div id="nd-${t.id}" class="note-display ${!note?'empty':''}" onclick="editNote(event,'${t.id}')">${note||'✏️ Click to add a note...'}</div>
+      <textarea id="ni-${t.id}" class="note-input" rows="2" placeholder="Add your custom note here...">${note}</textarea>
+      <div id="na-${t.id}" class="note-actions">
+        <button class="note-save" onclick="saveNote(event,'${t.id}')">Save</button>
+        <button class="note-cancel" onclick="cancelNote(event,'${t.id}')">Cancel</button>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a class="open-btn" href="${t.url}" target="_blank" rel="noopener noreferrer"
+         onclick="event.stopPropagation();trackVisit('${t.id}','${safeName}','${safeGrad}')">
+        Open Tool <span class="arrow">→</span>
+      </a>
+      ${r ? `<span class="visit-time">Last: ${timeAgo(r.time)}</span>` : ''}
+    </div>
+  </div>`;
+}
+
+// ── RENDER ALL ─────────────────────────────────────────────────────────────────
+function renderAll() {
+  const q = document.getElementById("search").value.toLowerCase();
+  const filtered = TOOLS.filter(t =>
+    (activeCategory === "All" || t.category === activeCategory) &&
+    (t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.category.toLowerCase().includes(q))
   );
-  document.getElementById("visible-count").textContent=filtered.length;
-  const grid=document.getElementById("grid"),empty=document.getElementById("empty");
-  if(!filtered.length){grid.innerHTML="";empty.style.display="block";return;}
-  empty.style.display="none";
-  const recentIds=recent.map(r=>r.id);
 
-  grid.innerHTML=filtered.map(t=>{
-    const note=notes[t.id]||"";
-    const isRecent=recentIds.includes(t.id);
-    const r=recent.find(x=>x.id===t.id);
-    return `
-    <div class="card" data-id="${t.id}"
-      draggable="true"
-      ondragstart="onDragStart(event,'${t.id}')"
-      ondragend="onDragEnd(event)"
-      ondragover="onDragOver(event,'${t.id}')"
-      ondragleave="onDragLeave(event)"
-      ondrop="onDrop(event,'${t.id}')">
+  document.getElementById("visible-count").textContent = filtered.length;
+  const content = document.getElementById("main-content");
+  const empty   = document.getElementById("empty");
 
-      <div class="drag-handle" title="Drag to reorder">
-        <svg viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.2" fill="#64748b"/><circle cx="9" cy="12" r="1.2" fill="#64748b"/><circle cx="9" cy="19" r="1.2" fill="#64748b"/><circle cx="15" cy="5" r="1.2" fill="#64748b"/><circle cx="15" cy="12" r="1.2" fill="#64748b"/><circle cx="15" cy="19" r="1.2" fill="#64748b"/></svg>
+  if (!filtered.length) { content.innerHTML = ""; empty.style.display = "block"; return; }
+  empty.style.display = "none";
+
+  // Group by category (preserving TOOLS order within each category)
+  const cats = activeCategory === "All"
+    ? Object.keys(CATEGORY_COLORS)
+    : [activeCategory];
+
+  let html = "";
+  cats.forEach(cat => {
+    const catTools = filtered.filter(t => t.category === cat);
+    if (!catTools.length) return;
+    const cc = CATEGORY_COLORS[cat];
+    html += `
+    <div class="category-section">
+      <div class="category-header">
+        <span class="category-title" style="color:${cc.color}">${cc.title}</span>
+        <span class="category-count">${catTools.length} tool${catTools.length>1?'s':''}</span>
+        <div class="category-line"></div>
       </div>
-
-      ${isRecent?`<span class="recent-badge">Recent</span>`:''}
-
-      <div class="card-top">
-        <div class="card-icon" style="background:${t.gradient}"><svg viewBox="0 0 24 24">${ICONS[t.icon]}</svg></div>
-        <div class="card-meta">
-          <span class="badge">${t.badge}</span>
-          <span class="cat-label">${t.category}</span>
-        </div>
-      </div>
-
-      <h3>${t.name}</h3>
-      <p class="desc">${t.desc}</p>
-
-      <div class="note-area">
-        <div id="nd-${t.id}" class="note-display ${!note?'empty':''}" onclick="editNote(event,'${t.id}')">${note||'✏️ Click to add a note...'}</div>
-        <textarea id="ni-${t.id}" class="note-input" rows="2" placeholder="Add your custom note here...">${note}</textarea>
-        <div id="na-${t.id}" class="note-actions">
-          <button class="note-save" onclick="saveNote(event,'${t.id}')">Save</button>
-          <button class="note-cancel" onclick="cancelNote(event,'${t.id}')">Cancel</button>
-        </div>
-      </div>
-
-      <div class="card-footer">
-        <a class="open-btn" href="${t.url}" target="_blank" rel="noopener noreferrer"
-           onclick="event.stopPropagation();trackVisit('${t.id}','${t.name.replace(/'/g,"\\'")}','${t.gradient}')">
-          Open Tool <span class="arrow">→</span>
-        </a>
-        ${r?`<span class="visit-time">Last: ${timeAgo(r.time)}</span>`:''}
-      </div>
+      <div class="grid">${catTools.map(cardHTML).join('')}</div>
     </div>`;
-  }).join('');
+  });
+
+  content.innerHTML = html;
+  document.getElementById("notes-count").textContent = Object.values(notes).filter(n=>n).length;
 }
 
 // ── INIT ───────────────────────────────────────────────────────────────────────
-renderFilters(); renderRecent(); renderGrid(); updateVisitCount();
+renderFilters(); renderRecent(); renderAll(); updateVisitCount();
 </script>
 </body>
 </html>
-
